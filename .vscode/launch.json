@@ -11,7 +11,7 @@
             "args": [
                 "test",
                 "--runInBand",
-                "--passWithNoTests",
+                "--passWithNoTests"
             ],
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
@@ -22,12 +22,20 @@
         },
         {
             "type": "node",
+            "name": "vscode-jest-updatesnapshot",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
+            "args": [
+                "test",
+                "--runInBand",
+                "--passWithNoTests",
+                "--updateSnapshot"
             ],
-            "program": "${workspaceFolder}\\start"
-        }
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "disableOptimisticBPs": true,
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/react-scripts",
+            "protocol": "inspector"
+        },
     ]
 }

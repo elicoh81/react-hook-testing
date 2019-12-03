@@ -18,7 +18,7 @@ export default function MyReduxComponent({ onCountChange: onTodoChange = (todo: 
                 }}>
                 Increment Count
             </button>
-            {todos.map( todo => <div>{todo}</div>)}
+            {todos.map( (todo, i) => <div key={"todo-" + i}>{todo}</div>)}
         </div>
     );
 }
