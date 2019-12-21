@@ -3,7 +3,7 @@ import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 Enzyme.configure({ adapter: new Adapter() });
 import { act } from "react-dom/test-utils";
-import MyReduxComponent from "./components/my-component/MyReduxComponent";
+import MyReduxComponent from "../src/components/my-component/MyReduxComponent";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 

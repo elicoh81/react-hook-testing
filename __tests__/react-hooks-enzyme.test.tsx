@@ -2,14 +2,14 @@ import React from 'react';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
-import MyComponent from './components/my-component/MyComponent';
-import useCustomHook from './components/my-component/useCustomHook';
+import MyComponent from '../src/components/my-component/MyComponent';
+import useCustomHook from '../src/components/my-component/useCustomHook';
 import { act } from 'react-dom/test-utils'
 
 describe('MyComponent', () => {
 
     const onCountChange = jest.fn(x => x);
-    let wrapper: Enzyme.ReactWrapper<any, Readonly<{}>, React.Component<{}, {}, any>>;
+    let wrapper: any;
 
     beforeEach(() => {
         wrapper = mount(<MyComponent onCountChange={onCountChange} />);
@@ -51,7 +51,7 @@ describe('MyComponent', () => {
 });
 
 describe.only('useCustomHook', () => {
-    let wrapper: Enzyme.ReactWrapper<any, Readonly<{}>, React.Component<{}, {}, any>>;
+    let wrapper: any;
     let results: any;
     const renderHook = (hook: { (): { count: number; increment: () => void; }; }) => {        
         function HookWrapper() {

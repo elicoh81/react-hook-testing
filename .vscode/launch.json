@@ -28,14 +28,14 @@
                 "test",
                 "--runInBand",
                 "--passWithNoTests",
-                "--updateSnapshot"
+                "--config=${workspaceFolder}/config/test_config/jest.config.js"
             ],
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "disableOptimisticBPs": true,
             "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/react-scripts",
-            "protocol": "inspector"
+            "protocol": "inspector",
         },
     ]
 }
